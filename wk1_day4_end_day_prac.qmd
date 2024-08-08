@@ -1,0 +1,45 @@
+---
+title: "r-data-exploration"
+author: "Joshua Paul Cohen"
+format: html
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+# libraries
+
+library(tidyverse)
+library(GGally)
+library(skimr)
+
+```
+
+```{r}
+#print summry stats of diamonds dtaset
+names(diamonds)
+dim(diamonds)
+summary(diamonds)
+head(diamonds)
+tail(diamonds)
+skimr::skim(diamonds)
+
+```
+
+```{r}
+# chaos
+ggpairs(diamonds, columns = 1:2)
+
+```
+
+```{r}
+# scatterplot
+ggplot(data = diamonds, aes(x = carat, y = price, color = cut)) + geom_point()
+```
+
+```{r}
+# histogram
+ggplot(data = diamonds, aes(x = carat, fill = cut)) + geom_histogram()
+```
+
+
